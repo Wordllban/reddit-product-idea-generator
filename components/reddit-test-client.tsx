@@ -137,6 +137,38 @@ export function RedditTestClient() {
     setTestResults([result]);
   };
 
+  const validateSubreddit = async (subreddit: string) => {
+    try {
+      const response = await fetch('/api/reddit/validate-subreddit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subreddit }),
+      });
+
+      const result = await response.json();
+      return result.success ? result.validation : null;
+    } catch (error) {
+      console.error('Validation error:', error);
+      return null;
+    }
+  };
+
+  const performHealthCheck = async (subreddit?: string, checkAll = false) => {
+    try {
+      const response = await fetch('/api/reddit/health-check', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subreddit, checkAll }),
+      });
+
+      const result = await response.json();
+      return result.success ? result : null;
+    } catch (error) {
+      console.error('Health check error:', error);
+      return null;
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Authentication Test */}
@@ -298,6 +330,79 @@ export function RedditTestClient() {
               Please authenticate first to test data extraction.
             </p>
           )}
+        </CardContent>
+      </Card>
+
+      {/* Validation & Health Checks */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Subreddit Validation & Health Checks</CardTitle>
+          <CardDescription>
+            Validate subreddit accessibility and perform health checks
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex flex-wrap gap-4">
+            <Button
+              onClick={async () => {
+                const result = await performHealthCheck(undefined, true);
+                if (result) {
+                  console.log('Health check results:', result);
+                  // You could show results in UI here
+                }
+              }}
+              disabled={!authStatus.isAuthenticated}
+              variant="secondary"
+            >
+              <CheckCircle className="h-4 w-4 mr-2" />
+              Health Check All
+            </Button>
+
+            <div className="flex items-center gap-2">
+              <Button
+                onClick={async () => {
+                  const validation = await validateSubreddit(selectedSubreddit);
+                  if (validation) {
+                    console.log(
+                      `Validation for r/${selectedSubreddit}:`,
+                      validation,
+                    );
+                  }
+                }}
+                variant="outline"
+                disabled={!authStatus.isAuthenticated}
+              >
+                Validate Selected
+              </Button>
+
+              <Button
+                onClick={async () => {
+                  const result = await performHealthCheck(selectedSubreddit);
+                  if (result) {
+                    console.log(
+                      `Health check for r/${selectedSubreddit}:`,
+                      result.healthCheck,
+                    );
+                  }
+                }}
+                variant="outline"
+                disabled={!authStatus.isAuthenticated}
+              >
+                Health Check Selected
+              </Button>
+            </div>
+          </div>
+
+          <div className="text-sm text-muted-foreground">
+            <p>
+              <strong>Validation</strong>: Checks if subreddit exists, is
+              accessible, and gets basic info
+            </p>
+            <p>
+              <strong>Health Check</strong>: Comprehensive analysis including
+              activity levels and recommendations
+            </p>
+          </div>
         </CardContent>
       </Card>
 

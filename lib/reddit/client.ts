@@ -250,6 +250,158 @@ export class RedditApiClient {
   }
 
   /**
+   * Validates if a subreddit exists and is accessible
+   */
+  async validateSubreddit(subreddit: string): Promise<{
+    exists: boolean;
+    accessible: boolean;
+    subscribers: number;
+    isPrivate: boolean;
+    error?: string;
+  }> {
+    try {
+      const info = await this.getSubredditInfo(subreddit);
+      const subredditData = info.data;
+
+      return {
+        exists: true,
+        accessible: true,
+        subscribers: subredditData.subscribers || 0,
+        isPrivate: subredditData.subreddit_type === 'private',
+        error: undefined,
+      };
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : 'Unknown error';
+
+      // Check if it's a "not found" error
+      if (errorMessage.includes('404') || errorMessage.includes('not found')) {
+        return {
+          exists: false,
+          accessible: false,
+          subscribers: 0,
+          isPrivate: false,
+          error: 'Subreddit does not exist',
+        };
+      }
+
+      // Check if it's a "forbidden" error (private subreddit)
+      if (errorMessage.includes('403') || errorMessage.includes('forbidden')) {
+        return {
+          exists: true,
+          accessible: false,
+          subscribers: 0,
+          isPrivate: true,
+          error: 'Subreddit is private or restricted',
+        };
+      }
+
+      return {
+        exists: false,
+        accessible: false,
+        subscribers: 0,
+        isPrivate: false,
+        error: errorMessage,
+      };
+    }
+  }
+
+  /**
+   * Performs health check on a subreddit (activity, accessibility, etc.)
+   */
+  async performSubredditHealthCheck(subreddit: string): Promise<{
+    healthy: boolean;
+    validation: {
+      exists: boolean;
+      accessible: boolean;
+      subscribers: number;
+      isPrivate: boolean;
+      error?: string;
+    };
+    recentActivity: {
+      hasRecentPosts: boolean;
+      postCount: number;
+      averageScore: number;
+    };
+    recommendations: string[];
+  }> {
+    const validation = await this.validateSubreddit(subreddit);
+    const recommendations: string[] = [];
+    let healthy = true;
+
+    // Check basic accessibility
+    if (!validation.exists) {
+      healthy = false;
+      recommendations.push(
+        'Subreddit does not exist - remove from target list',
+      );
+    } else if (!validation.accessible) {
+      healthy = false;
+      recommendations.push(
+        'Subreddit is not accessible - consider alternative',
+      );
+    }
+
+    // Check recent activity
+    let recentActivity = {
+      hasRecentPosts: false,
+      postCount: 0,
+      averageScore: 0,
+    };
+
+    if (validation.accessible) {
+      try {
+        const posts = await this.getSubredditPosts(subreddit, 'hot', 10);
+        const postData = posts.data.children.map((child) => child.data);
+
+        recentActivity = {
+          hasRecentPosts: postData.length > 0,
+          postCount: postData.length,
+          averageScore:
+            postData.length > 0
+              ? postData.reduce((sum, post) => sum + post.score, 0) /
+                postData.length
+              : 0,
+        };
+
+        // Health recommendations based on activity
+        if (postData.length === 0) {
+          healthy = false;
+          recommendations.push(
+            'No recent posts found - subreddit may be inactive',
+          );
+        } else if (recentActivity.averageScore < 5) {
+          recommendations.push(
+            'Low engagement scores - consider higher priority subreddits',
+          );
+        } else if (validation.subscribers < 10000) {
+          recommendations.push(
+            'Small community size - may have limited content',
+          );
+        }
+
+        if (postData.length >= 5 && recentActivity.averageScore >= 10) {
+          recommendations.push('Good activity and engagement levels');
+        }
+      } catch (error) {
+        healthy = false;
+        recommendations.push(
+          `Error fetching posts: ${
+            error instanceof Error ? error.message : 'Unknown error'
+          }`,
+        );
+      }
+    }
+
+    return {
+      healthy,
+      validation,
+      recentActivity,
+      recommendations,
+    };
+  }
+
+  /**
    * Gets current rate limit status
    */
   getRateLimitStatus(): { remaining: number; resetTime: number } {

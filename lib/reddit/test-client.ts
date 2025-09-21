@@ -99,6 +99,80 @@ export async function testRateLimit(): Promise<void> {
 }
 
 /**
+ * Tests subreddit validation functionality
+ */
+export async function testSubredditValidation(
+  subreddit: string = 'entrepreneur',
+): Promise<void> {
+  try {
+    console.log(`Testing validation for r/${subreddit}...`);
+    const validation = await redditClient.validateSubreddit(subreddit);
+
+    console.log(`   Exists: ${validation.exists}`);
+    console.log(`   Accessible: ${validation.accessible}`);
+    console.log(`   Subscribers: ${validation.subscribers.toLocaleString()}`);
+    console.log(`   Private: ${validation.isPrivate}`);
+    if (validation.error) {
+      console.log(`   Error: ${validation.error}`);
+    }
+  } catch (error) {
+    console.error(`Validation test failed for r/${subreddit}:`, error);
+  }
+}
+
+/**
+ * Tests subreddit health check functionality
+ */
+export async function testSubredditHealthCheck(
+  subreddit: string = 'entrepreneur',
+): Promise<void> {
+  try {
+    console.log(`Performing health check for r/${subreddit}...`);
+    const healthCheck = await redditClient.performSubredditHealthCheck(
+      subreddit,
+    );
+
+    console.log(
+      `   Overall Health: ${
+        healthCheck.healthy ? '✅ Healthy' : '❌ Unhealthy'
+      }`,
+    );
+    console.log(`   Recent Posts: ${healthCheck.recentActivity.postCount}`);
+    console.log(
+      `   Average Score: ${healthCheck.recentActivity.averageScore.toFixed(1)}`,
+    );
+    console.log(
+      `   Subscribers: ${healthCheck.validation.subscribers.toLocaleString()}`,
+    );
+
+    if (healthCheck.recommendations.length > 0) {
+      console.log('   Recommendations:');
+      healthCheck.recommendations.forEach((rec) => {
+        console.log(`     - ${rec}`);
+      });
+    }
+  } catch (error) {
+    console.error(`Health check failed for r/${subreddit}:`, error);
+  }
+}
+
+/**
+ * Tests validation and health for all target subreddits
+ */
+export async function testAllSubredditHealth(): Promise<void> {
+  const subreddits = getEnabledSubreddits();
+  console.log(`Testing health for ${subreddits.length} target subreddits...\n`);
+
+  for (const config of subreddits) {
+    await testSubredditHealthCheck(config.name);
+    console.log(); // Empty line between subreddits
+
+    // Small delay between requests
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+}
+
+/**
  * Runs all tests
  */
 export async function runAllTests(): Promise<void> {
@@ -137,8 +211,13 @@ export async function runAllTests(): Promise<void> {
   });
   console.log();
 
-  // Test 4: Rate limiting
-  console.log('4. Testing rate limiting...');
+  // Test 4: Subreddit validation
+  console.log('4. Testing subreddit validation...');
+  await testSubredditValidation('entrepreneur');
+  console.log();
+
+  // Test 5: Rate limiting
+  console.log('5. Testing rate limiting...');
   await testRateLimit();
 
   console.log('\n🎉 All tests completed!');
