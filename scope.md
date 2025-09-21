@@ -20,9 +20,9 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ### 1.2 Cursor AI Documentation Setup
 
-- [ ] Create `.cursor/` folder
-- [ ] Write `rules.md` (architecture, style, commit conventions)
-- [ ] Initialize `PROMPTS.md` for tracking AI interactions
+- [x] Create `.cursor/` folder
+- [x] Write `rules.md` (architecture, style, commit conventions)
+- [x] Initialize `PROMPTS.md` for tracking AI interactions
 - [ ] Document AI workflow approach
 
 ### 1.3 Database & Authentication Foundation

@@ -112,3 +112,13 @@ alwaysApply: true
 - Use React.memo() for expensive components that re-render frequently.
 - Optimize bundle size by importing only needed parts of libraries.
 - Use proper caching headers for API responses.
+
+## AI Interaction Documentation
+
+- Always update `PROMPTS.md` after significant AI interactions or feature implementations.
+- Document key prompts used for complex features (Reddit API integration, LLM integration, UI components).
+- Track interaction statistics and success rates for prompt optimization.
+- Update development log with session progress and next steps.
+- Use structured prompt templates for consistent AI assistance.
+- Record decision rationale and alternatives considered during AI-assisted development.
+- Maintain prompt evolution tracking to improve future interactions.
