@@ -97,7 +97,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
   - `RedditComment` interface
   - `SubredditConfig` interface
 
-#### 2.3.4 Data Storage & Caching
+### 2.4 Data Storage & Caching
 
 - [ ] Create database schema for Reddit data:
   - `reddit_posts` table with post metadata
@@ -107,7 +107,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 - [ ] Add caching layer for API responses (Redis or in-memory) (optional/post MVP)
 - [ ] Create data refresh and cleanup routines (optional/post MVP)
 
-### 2.4 LLM Integration
+### 2.5 LLM Integration
 
 - [ ] Setup OpenAI API integration
 - [ ] Design prompts for idea generation
@@ -115,7 +115,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 - [ ] Implement idea scoring algorithm
 - [ ] Add error handling and rate limiting
 
-#### 2.4.1 Data Processing & Filtering
+#### 2.5.1 Data Processing & Filtering
 
 - [ ] Implement content filtering logic:
   - Filter out promotional/spam content
