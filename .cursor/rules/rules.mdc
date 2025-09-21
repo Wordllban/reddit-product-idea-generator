@@ -122,3 +122,25 @@ alwaysApply: true
 - Use structured prompt templates for consistent AI assistance.
 - Record decision rationale and alternatives considered during AI-assisted development.
 - Maintain prompt evolution tracking to improve future interactions.
+
+## Git Commit Conventions
+
+- Use conventional commit message format: `type(scope): description`
+- **Required prefixes**:
+  - `feat:` - New features or functionality
+  - `fix:` - Bug fixes and error corrections
+  - `chore:` - Maintenance tasks, dependency updates, tooling
+  - `docs:` - Documentation changes only
+  - `style:` - Code formatting, whitespace, styling (no logic changes)
+  - `refactor:` - Code restructuring without changing functionality
+  - `test:` - Adding or updating tests
+  - `perf:` - Performance improvements
+- **Optional scope**: Component/area affected (e.g., `feat(auth):`, `fix(api):`)
+- **Description**: Clear, concise summary in present tense
+- **Examples**:
+  - `feat: add Reddit API integration for data extraction`
+  - `fix(auth): resolve login redirect loop issue`
+  - `chore: update dependencies and configure ESLint`
+  - `docs: update README with setup instructions`
+- Commit frequently with atomic changes
+- Write descriptive commit messages that explain the "why" not just the "what"
