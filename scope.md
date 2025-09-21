@@ -71,7 +71,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 #### 2.3.2 Subreddit Research & Targeting
 
-- [ ] Research and identify target subreddits for product idea discovery:
+- [x] Research and identify target subreddits for product idea discovery:
   - r/entrepreneur (startup problems)
   - r/smallbusiness (business pain points)
   - r/SaaS (software needs)
@@ -79,25 +79,43 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
   - r/productivity (workflow issues)
   - r/freelance (freelancer challenges)
   - r/startups (market gaps)
-- [ ] Create subreddit configuration with categories
-- [ ] Implement subreddit validation and health checks
+- [x] Create subreddit configuration with categories
+- [x] Implement subreddit validation and health checks
 
 #### 2.3.3 Data Extraction Logic
 
-- [ ] Create post fetching functions:
+- [x] Create post fetching functions:
   - Fetch hot posts from target subreddits
   - Fetch top posts (weekly/monthly)
   - Fetch rising posts for trending topics
-- [ ] Implement comment extraction:
+- [x] Implement comment extraction:
   - Get top-level comments
   - Filter comments by engagement (upvotes)
   - Extract problem statements from comments
-- [ ] Create data models/interfaces:
+- [x] Create data models/interfaces:
   - `RedditPost` interface
   - `RedditComment` interface
   - `SubredditConfig` interface
 
-#### 2.3.4 Data Processing & Filtering
+#### 2.3.4 Data Storage & Caching
+
+- [ ] Create database schema for Reddit data:
+  - `reddit_posts` table with post metadata
+  - `reddit_comments` table for comment data
+  - `subreddit_tracking` table for monitoring
+- [ ] Implement data persistence functions
+- [ ] Add caching layer for API responses (Redis or in-memory) (optional/post MVP)
+- [ ] Create data refresh and cleanup routines (optional/post MVP)
+
+### 2.4 LLM Integration
+
+- [ ] Setup OpenAI API integration
+- [ ] Design prompts for idea generation
+- [ ] Create structured response parsing
+- [ ] Implement idea scoring algorithm
+- [ ] Add error handling and rate limiting
+
+#### 2.4.1 Data Processing & Filtering
 
 - [ ] Implement content filtering logic:
   - Filter out promotional/spam content
@@ -110,35 +128,9 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
   - Sentiment analysis for problem identification
 - [ ] Implement data validation and sanitization
 
-#### 2.3.5 Data Storage & Caching
-
-- [ ] Create database schema for Reddit data:
-  - `reddit_posts` table with post metadata
-  - `reddit_comments` table for comment data
-  - `subreddit_tracking` table for monitoring
-- [ ] Implement data persistence functions
-- [ ] Add caching layer for API responses (Redis or in-memory) (optional/post MVP)
-- [ ] Create data refresh and cleanup routines (optional/post MVP)
-
-#### 2.3.6 Reddit Service Integration
-
-- [ ] Create `lib/reddit/service.ts` for business logic
-- [ ] Implement batch processing for multiple subreddits
-- [ ] Add monitoring and logging for API usage (optional/post MVP)
-- [ ] Create error handling and retry mechanisms (optional/post MVP)
-- [ ] Implement data export utilities for LLM processing
-
-### 2.4 LLM Integration
-
-- [ ] Setup OpenAI API integration
-- [ ] Design prompts for idea generation
-- [ ] Create structured response parsing
-- [ ] Implement idea scoring algorithm
-- [ ] Add error handling and rate limiting
-
 ---
 
-## 📋 Phase 3: User Experience (Priority: MEDIUM)
+## 📋 Phase 3: User Experience (Priority: HIGH)
 
 ### 3.1 Ideas Feed Interface
 
@@ -162,7 +154,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ---
 
-## 📋 Phase 4: Email System (Priority: MEDIUM)
+## 📋 Phase 4: Email System (Priority: LOW)
 
 ### 4.1 Email Service Integration
 
