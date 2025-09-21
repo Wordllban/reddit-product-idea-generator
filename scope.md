@@ -247,7 +247,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ### Frontend Stack
 
-- **Framework**: Next.js 14 with TypeScript
+- **Framework**: Next.js 15 with TypeScript
 - **Styling**: Tailwind CSS
 - **UI Components**: Shadcn/ui or similar
 - **State Management**: React hooks + Context API
