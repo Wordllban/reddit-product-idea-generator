@@ -1,0 +1,114 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# You are an expert in TypeScript, Node.js, Next.js App Router, React, Zustand, Shadcn UI, Radix UI and Tailwind.
+
+## Follow Next.js docs for Rendering, and Routing.
+
+## TypeScript Usage
+
+- Use TypeScript for all code.
+- Use functional components with TypeScript interfaces.
+
+## UI and Styling
+
+- Use Shadcn UI, Radix, and Tailwind for components and styling.
+- Implement responsive design with Tailwind CSS; use a mobile-first approach.
+
+## Key Conventions
+
+- Optimize Web Vitals (LCP, CLS, FID).
+- Limit 'use client':
+  - Favor server components and Next.js SSR.
+  - Use only for Web API access in small components.
+- Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+## Code Style and Structure
+
+- Do not import whole library's object, instead import only used part.
+- Write concise, technical TypeScript code with accurate examples.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Use this directory structure for pages: components, types, utils, constants.
+- Use existing ESlint (.eslintrc.js) and Prettier (.prettierrc.js) configs.
+
+## Naming Conventions
+
+- Use lowercase with dashes for page directories (e.g., app/reset-password).
+- Use Camel case for React components (e.g., components/RichTextEditor).
+- Favor named exports for components.
+
+## Syntax and Formatting
+
+- Always use curly braces in conditionals and switch-case statements.
+- Do not nest ternary operators; move nested conditions into a variable.
+- Use declarative JSX.
+
+## Supabase Integration
+
+- Always create new Supabase clients within functions, never as global variables (especially important for Fluid compute).
+- Use server-side client (`createClient()` from `@/lib/supabase/server`) for Server Components and API routes.
+- Use client-side client (`createClient()` from `@/lib/supabase/client`) only in Client Components.
+- Always handle auth errors gracefully with proper error messages.
+- Use TypeScript interfaces for database types and auth user objects.
+- Implement proper cookie handling in middleware for session management.
+
+## Authentication Patterns
+
+- Protect routes using middleware pattern in `middleware.ts`.
+- Use Server Components for auth checks when possible (better performance).
+- Handle loading states properly during auth operations.
+- Always redirect to appropriate routes after auth actions (login → `/protected`, logout → `/`).
+- Use descriptive error messages for auth failures.
+
+## API Integration Best Practices
+
+- Create dedicated service files for external APIs (Reddit, OpenAI) in `lib/` directory.
+- Implement proper rate limiting and error handling for external API calls.
+- Use environment variables for all API keys and sensitive configuration.
+- Create TypeScript interfaces for external API responses.
+- Implement retry logic for failed API requests with exponential backoff.
+
+## Form Handling
+
+- Use controlled components with useState for form inputs.
+- Implement proper form validation with clear error messages.
+- Handle loading states during form submission.
+- Prevent multiple submissions with proper button states.
+- Use proper ARIA labels and accessibility attributes.
+
+## Data Fetching Patterns
+
+- Prefer Server Components and server-side data fetching when possible.
+- Use React 19 `use()` hook for client-side async operations when needed.
+- Implement proper loading states and error boundaries.
+- Cache API responses appropriately using Next.js caching strategies.
+- Use optimistic updates for better UX where appropriate.
+
+## Database Schema Conventions
+
+- Use snake_case for database column names (Supabase/PostgreSQL convention).
+- Use camelCase when converting to TypeScript interfaces.
+- Always include `created_at` and `updated_at` timestamps.
+- Use proper foreign key relationships and constraints.
+- Index frequently queried columns.
+
+## Error Handling
+
+- Create custom error types for different error scenarios.
+- Use error boundaries for React component error handling.
+- Log errors appropriately without exposing sensitive information.
+- Provide user-friendly error messages in the UI.
+- Implement fallback UI states for error scenarios.
+
+## Performance Optimization
+
+- Use Next.js Image component for all images.
+- Implement proper lazy loading for components and data.
+- Use React.memo() for expensive components that re-render frequently.
+- Optimize bundle size by importing only needed parts of libraries.
+- Use proper caching headers for API responses.
