@@ -32,9 +32,11 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 - [ ] Design database schema:
   - `users` table (auth integration)
   - `ideas` table (generated product ideas)
-  - `subreddits` table (tracked subreddits)
+  - `subreddits` table (tracked subreddits with categories)
   - `subscriptions` table (email preferences)
-  - `reddit_posts` table (source data)
+  - `reddit_posts` table (post metadata, content, engagement)
+  - `reddit_comments` table (comment data, parent relationships)
+  - `subreddit_tracking` table (monitoring stats, last_fetched)
 
 ---
 
@@ -42,10 +44,10 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ### 2.1 Landing Page
 
-- [ ] Create hero section with value proposition
-- [ ] Add feature highlights
-- [ ] Implement "Get Started" CTA
-- [ ] Basic responsive design
+- [x] Create hero section with value proposition
+- [x] Add feature highlights
+- [x] Implement "Get Started" CTA
+- [x] Basic responsive design
 
 ### 2.2 Authentication System
 
@@ -56,10 +58,75 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ### 2.3 Reddit Data Integration
 
-- [ ] Setup Reddit API client
-- [ ] Identify target subreddits for problem discovery
-- [ ] Create data extraction logic for posts/comments
-- [ ] Implement data cleaning and filtering
+#### 2.3.1 Reddit API Client Setup
+
+- [x] Create Reddit API credentials (app registration)
+- [x] Setup environment variables for Reddit API
+  - `REDDIT_CLIENT_ID`
+  - `REDDIT_CLIENT_SECRET`
+  - `REDDIT_USER_AGENT`
+- [x] Create `lib/reddit/client.ts` with Reddit API client
+- [x] Implement OAuth2 authentication flow for Reddit API
+- [x] Add rate limiting and error handling to Reddit client
+
+#### 2.3.2 Subreddit Research & Targeting
+
+- [ ] Research and identify target subreddits for product idea discovery:
+  - r/entrepreneur (startup problems)
+  - r/smallbusiness (business pain points)
+  - r/SaaS (software needs)
+  - r/webdev (developer tools)
+  - r/productivity (workflow issues)
+  - r/freelance (freelancer challenges)
+  - r/startups (market gaps)
+- [ ] Create subreddit configuration with categories
+- [ ] Implement subreddit validation and health checks
+
+#### 2.3.3 Data Extraction Logic
+
+- [ ] Create post fetching functions:
+  - Fetch hot posts from target subreddits
+  - Fetch top posts (weekly/monthly)
+  - Fetch rising posts for trending topics
+- [ ] Implement comment extraction:
+  - Get top-level comments
+  - Filter comments by engagement (upvotes)
+  - Extract problem statements from comments
+- [ ] Create data models/interfaces:
+  - `RedditPost` interface
+  - `RedditComment` interface
+  - `SubredditConfig` interface
+
+#### 2.3.4 Data Processing & Filtering
+
+- [ ] Implement content filtering logic:
+  - Filter out promotional/spam content
+  - Identify problem-focused discussions
+  - Extract pain points and frustrations
+  - Remove low-quality or off-topic content
+- [ ] Create text processing utilities:
+  - Clean markdown formatting
+  - Extract key phrases and keywords
+  - Sentiment analysis for problem identification
+- [ ] Implement data validation and sanitization
+
+#### 2.3.5 Data Storage & Caching
+
+- [ ] Create database schema for Reddit data:
+  - `reddit_posts` table with post metadata
+  - `reddit_comments` table for comment data
+  - `subreddit_tracking` table for monitoring
+- [ ] Implement data persistence functions
+- [ ] Add caching layer for API responses (Redis or in-memory) (optional/post MVP)
+- [ ] Create data refresh and cleanup routines (optional/post MVP)
+
+#### 2.3.6 Reddit Service Integration
+
+- [ ] Create `lib/reddit/service.ts` for business logic
+- [ ] Implement batch processing for multiple subreddits
+- [ ] Add monitoring and logging for API usage (optional/post MVP)
+- [ ] Create error handling and retry mechanisms (optional/post MVP)
+- [ ] Implement data export utilities for LLM processing
 
 ### 2.4 LLM Integration
 
@@ -190,7 +257,13 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 - **Database**: Supabase (PostgreSQL)
 - **Authentication**: Supabase Auth
 - **API**: Next.js API routes
-- **External APIs**: Reddit API, OpenAI API
+- **External APIs**:
+  - Reddit API (OAuth2, rate-limited client)
+  - OpenAI API (GPT-4/3.5-turbo)
+- **Reddit Integration**:
+  - Custom client with rate limiting
+  - Data processing pipeline
+  - Caching layer for API responses
 
 ### Third-Party Services
 
@@ -203,8 +276,11 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 ## 📊 Time Allocation Strategy
 
 - **Phase 1 (Setup)**: 1.5 hours
-- **Phase 2 (Core MVP)**: 4 hours
-- **Phase 3 (UX)**: 1.5 hours
+- **Phase 2 (Core MVP)**: 4.5 hours
+  - Reddit API Integration: 2 hours
+  - LLM Integration: 1.5 hours
+  - Ideas Feed Interface: 1 hour
+- **Phase 3 (UX)**: 1 hour
 - **Phase 6 (Documentation)**: 1 hour
 
 **Total**: 8 hours
@@ -215,9 +291,11 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ### High-Risk Items
 
-1. **Reddit API rate limits** - Implement proper caching and request throttling
-2. **LLM API costs** - Set usage limits and implement fallbacks
-3. **Complex background processing** - Start with simple manual triggers
+1. **Reddit API rate limits** - Implement proper caching and request throttling (60 requests/minute)
+2. **Reddit API authentication** - OAuth2 flow complexity and token management
+3. **Data quality from Reddit** - Filtering spam, irrelevant content, and low-quality posts
+4. **LLM API costs** - Set usage limits and implement fallbacks
+5. **Complex background processing** - Start with simple manual triggers
 
 ### Fallback Plans
 
