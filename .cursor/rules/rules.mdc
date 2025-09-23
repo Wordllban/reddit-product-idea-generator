@@ -124,6 +124,7 @@ alwaysApply: true
 - Use structured prompt templates for consistent AI assistance.
 - Record decision rationale and alternatives considered during AI-assisted development.
 - Maintain prompt evolution tracking to improve future interactions.
+- Reuse prompts for similar requests, you adjust them to be more specific for current request.
 
 ## Git Commit Conventions
 
