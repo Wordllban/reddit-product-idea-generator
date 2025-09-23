@@ -251,7 +251,7 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 - **API**: Next.js API routes
 - **External APIs**:
   - Reddit API (OAuth2, rate-limited client)
-  - OpenAI API (GPT-4/3.5-turbo)
+  - OpenAI API (GPT-5-nano)
 - **Reddit Integration**:
   - Custom client with rate limiting
   - Data processing pipeline
@@ -259,9 +259,8 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 
 ### Third-Party Services
 
-- **LLM**: OpenAI GPT-4 or GPT-3.5-turbo
+- **LLM**: OpenAI GPT-5-nano
 - **Email**: Resend (recommended for simplicity)
-- **Hosting**: Vercel (seamless Next.js deployment)
 
 ---
 

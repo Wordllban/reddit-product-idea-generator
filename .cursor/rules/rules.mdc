@@ -6,6 +6,8 @@ alwaysApply: true
 
 # You are an expert in PNPM, TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI and Tailwind.
 
+## Latest OpenAI model is GPT-5. We are using GPT-5-nano.
+
 ## Follow Next.js docs for Rendering, and Routing.
 
 ## TypeScript Usage

@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
-import { RedditTestClient } from '@/components/reddit-test-client';
+import { IdeaGeneratorClient } from '@/components/idea-generator-client';
 
 export default async function IdeasPage() {
   const supabase = await createClient();
@@ -11,16 +11,16 @@ export default async function IdeasPage() {
   }
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-8">
+    <div className="flex-1 w-full flex flex-col gap-8 max-w-6xl mx-auto px-4">
       <div className="w-full">
         <h1 className="font-bold text-3xl mb-2">Product Ideas Generator</h1>
         <p className="text-muted-foreground">
-          Testing Reddit API integration for extracting product ideas from
-          targeted subreddits
+          Discover product opportunities by analyzing Reddit discussions for
+          problems and pain points
         </p>
       </div>
 
-      <RedditTestClient />
+      <IdeaGeneratorClient />
     </div>
   );
 }
