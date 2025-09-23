@@ -1,0 +1,431 @@
+{
+  "ideas": [
+    {
+      "id": "1",
+      "name": "TaskSync Pro",
+      "elevator_pitch": "AI-powered task management that automatically prioritizes your work based on deadlines, energy levels, and team dependencies.",
+      "target_audience": "Remote workers, project managers, and small teams struggling with task prioritization",
+      "pain_point_solved": "Constant overwhelm from not knowing which tasks to tackle first, leading to missed deadlines and stress",
+      "solution_approach": "Smart task prioritization algorithm combined with calendar integration and team collaboration features",
+      "overall_score": 87,
+      "pain_severity_score": 92,
+      "market_size_score": 85,
+      "competition_score": 78,
+      "implementation_difficulty": 65,
+      "category": "Business",
+      "tags": ["productivity", "ai", "task-management", "remote-work"],
+      "created_at": "2025-09-23T18:30:00.000Z",
+      "source_subreddits": ["entrepreneur", "productivity"],
+      "source_urls": [
+        "https://reddit.com/r/entrepreneur/comments/task_management_hell",
+        "https://reddit.com/r/productivity/comments/overwhelmed_by_tasks"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_001",
+        "reasoning": "High pain severity with clear market demand from remote work trends",
+        "generatedAt": "2025-09-23T18:30:00.000Z"
+      }
+    },
+    {
+      "id": "2",
+      "name": "CodeReview Buddy",
+      "elevator_pitch": "Automated code review assistant that provides instant feedback on code quality, security vulnerabilities, and best practices.",
+      "target_audience": "Junior developers, freelance programmers, and small development teams without senior oversight",
+      "pain_point_solved": "Junior developers making costly mistakes due to lack of experienced code review",
+      "solution_approach": "AI-powered static analysis with educational feedback and integration with popular IDEs",
+      "overall_score": 82,
+      "pain_severity_score": 88,
+      "market_size_score": 90,
+      "competition_score": 70,
+      "implementation_difficulty": 75,
+      "category": "Technology",
+      "tags": ["development", "ai", "code-review", "education"],
+      "created_at": "2025-09-23T17:45:00.000Z",
+      "source_subreddits": ["webdev", "SaaS"],
+      "source_urls": [
+        "https://reddit.com/r/webdev/comments/junior_dev_mistakes",
+        "https://reddit.com/r/SaaS/comments/code_quality_tools"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_001",
+        "reasoning": "Large developer market with clear pain point and scalable solution",
+        "generatedAt": "2025-09-23T17:45:00.000Z"
+      }
+    },
+    {
+      "id": "3",
+      "name": "BudgetGuard",
+      "elevator_pitch": "Personal finance app that prevents overspending by analyzing your spending patterns and sending real-time alerts before you exceed budget limits.",
+      "target_audience": "Young professionals, students, and anyone struggling with impulse spending and budget management",
+      "pain_point_solved": "People consistently overspending and not realizing until it's too late, leading to financial stress",
+      "solution_approach": "Real-time transaction monitoring with predictive spending alerts and gamified savings goals",
+      "overall_score": 79,
+      "pain_severity_score": 85,
+      "market_size_score": 88,
+      "competition_score": 65,
+      "implementation_difficulty": 70,
+      "category": "Lifestyle",
+      "tags": ["finance", "budgeting", "mobile-app", "notifications"],
+      "created_at": "2025-09-23T16:20:00.000Z",
+      "source_subreddits": ["personalfinance", "entrepreneur"],
+      "source_urls": [
+        "https://reddit.com/r/personalfinance/comments/overspending_problem",
+        "https://reddit.com/r/entrepreneur/comments/fintech_opportunities"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_002",
+        "reasoning": "Universal problem with strong emotional driver and clear monetization path",
+        "generatedAt": "2025-09-23T16:20:00.000Z"
+      }
+    },
+    {
+      "id": "4",
+      "name": "MeetingMindMap",
+      "elevator_pitch": "AI meeting assistant that automatically creates visual mind maps from meeting recordings and identifies action items with owners.",
+      "target_audience": "Business professionals, consultants, and team leaders who attend multiple meetings daily",
+      "pain_point_solved": "Information overload from meetings with poor follow-up on action items and decisions",
+      "solution_approach": "Audio transcription with AI-powered content structuring and automatic action item extraction",
+      "overall_score": 84,
+      "pain_severity_score": 80,
+      "market_size_score": 92,
+      "competition_score": 85,
+      "implementation_difficulty": 80,
+      "category": "Business",
+      "tags": ["meetings", "ai", "productivity", "visualization"],
+      "created_at": "2025-09-23T15:10:00.000Z",
+      "source_subreddits": ["productivity", "smallbusiness"],
+      "source_urls": [
+        "https://reddit.com/r/productivity/comments/meeting_overload",
+        "https://reddit.com/r/smallbusiness/comments/action_items_forgotten"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_002",
+        "reasoning": "High-value B2B solution with clear ROI for enterprise customers",
+        "generatedAt": "2025-09-23T15:10:00.000Z"
+      }
+    },
+    {
+      "id": "5",
+      "name": "SkillSwap Network",
+      "elevator_pitch": "Platform where freelancers can trade skills instead of money, helping them access services they need without cash flow issues.",
+      "target_audience": "Freelancers, solopreneurs, and creative professionals with limited budgets but valuable skills",
+      "pain_point_solved": "Freelancers needing professional services but lacking cash flow to pay for them upfront",
+      "solution_approach": "Skill-based bartering platform with reputation system and project matching algorithm",
+      "overall_score": 76,
+      "pain_severity_score": 78,
+      "market_size_score": 82,
+      "competition_score": 88,
+      "implementation_difficulty": 60,
+      "category": "Business",
+      "tags": ["freelance", "bartering", "skills", "networking"],
+      "created_at": "2025-09-23T14:30:00.000Z",
+      "source_subreddits": ["freelance", "entrepreneur"],
+      "source_urls": [
+        "https://reddit.com/r/freelance/comments/cash_flow_struggles",
+        "https://reddit.com/r/entrepreneur/comments/skill_trading_idea"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_003",
+        "reasoning": "Novel approach to freelancer challenges with network effects potential",
+        "generatedAt": "2025-09-23T14:30:00.000Z"
+      }
+    },
+    {
+      "id": "6",
+      "name": "API Documentation Generator",
+      "elevator_pitch": "Automatically generates beautiful, interactive API documentation from your code comments and endpoint definitions.",
+      "target_audience": "Backend developers, API teams, and small software companies lacking dedicated technical writers",
+      "pain_point_solved": "Outdated, incomplete API documentation that frustrates developers and slows down integrations",
+      "solution_approach": "Code analysis tool that extracts API information and generates interactive docs with testing capabilities",
+      "overall_score": 88,
+      "pain_severity_score": 90,
+      "market_size_score": 85,
+      "competition_score": 75,
+      "implementation_difficulty": 70,
+      "category": "Technology",
+      "tags": ["api", "documentation", "developer-tools", "automation"],
+      "created_at": "2025-09-23T13:15:00.000Z",
+      "source_subreddits": ["webdev", "SaaS"],
+      "source_urls": [
+        "https://reddit.com/r/webdev/comments/api_docs_nightmare",
+        "https://reddit.com/r/SaaS/comments/developer_experience"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_003",
+        "reasoning": "Critical developer pain point with clear value proposition and B2B pricing potential",
+        "generatedAt": "2025-09-23T13:15:00.000Z"
+      }
+    },
+    {
+      "id": "7",
+      "name": "FocusFlow Timer",
+      "elevator_pitch": "Smart pomodoro timer that adapts to your energy levels and automatically adjusts work/break intervals for optimal productivity.",
+      "target_audience": "Knowledge workers, students, and anyone struggling with focus and time management",
+      "pain_point_solved": "Fixed pomodoro intervals don't match natural energy rhythms, leading to forced breaks or burnout",
+      "solution_approach": "Adaptive timing algorithm based on keystroke patterns, heart rate data, and user feedback",
+      "overall_score": 73,
+      "pain_severity_score": 75,
+      "market_size_score": 80,
+      "competition_score": 60,
+      "implementation_difficulty": 55,
+      "category": "Lifestyle",
+      "tags": ["productivity", "focus", "time-management", "wellness"],
+      "created_at": "2025-09-23T12:45:00.000Z",
+      "source_subreddits": ["productivity", "startups"],
+      "source_urls": [
+        "https://reddit.com/r/productivity/comments/pomodoro_not_working",
+        "https://reddit.com/r/startups/comments/productivity_apps"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_004",
+        "reasoning": "Innovative take on established productivity method with personalization angle",
+        "generatedAt": "2025-09-23T12:45:00.000Z"
+      }
+    },
+    {
+      "id": "8",
+      "name": "ClientComm Hub",
+      "elevator_pitch": "Unified client communication platform that consolidates emails, messages, and project updates into one organized dashboard.",
+      "target_audience": "Freelancers, consultants, and small agencies managing multiple client relationships",
+      "pain_point_solved": "Client communications scattered across multiple platforms making it hard to track conversations and project status",
+      "solution_approach": "Integration platform that pulls communications from various sources with AI-powered categorization and priority scoring",
+      "overall_score": 81,
+      "pain_severity_score": 83,
+      "market_size_score": 78,
+      "competition_score": 82,
+      "implementation_difficulty": 75,
+      "category": "Business",
+      "tags": [
+        "communication",
+        "client-management",
+        "organization",
+        "freelance"
+      ],
+      "created_at": "2025-09-23T11:20:00.000Z",
+      "source_subreddits": ["freelance", "smallbusiness"],
+      "source_urls": [
+        "https://reddit.com/r/freelance/comments/client_communication_chaos",
+        "https://reddit.com/r/smallbusiness/comments/managing_client_relationships"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_004",
+        "reasoning": "Clear pain point for service-based businesses with subscription model potential",
+        "generatedAt": "2025-09-23T11:20:00.000Z"
+      }
+    },
+    {
+      "id": "9",
+      "name": "Code Snippet Manager",
+      "elevator_pitch": "Smart code snippet library that suggests relevant code blocks based on your current coding context and project patterns.",
+      "target_audience": "Developers who frequently reuse code patterns and want to avoid reinventing solutions",
+      "pain_point_solved": "Developers wasting time rewriting common code patterns or searching through old projects for solutions",
+      "solution_approach": "AI-powered snippet suggestion engine with IDE integration and team sharing capabilities",
+      "overall_score": 77,
+      "pain_severity_score": 70,
+      "market_size_score": 88,
+      "competition_score": 72,
+      "implementation_difficulty": 65,
+      "category": "Technology",
+      "tags": ["development", "productivity", "code-reuse", "ide-plugin"],
+      "created_at": "2025-09-22T20:30:00.000Z",
+      "source_subreddits": ["webdev", "productivity"],
+      "source_urls": [
+        "https://reddit.com/r/webdev/comments/code_reuse_patterns",
+        "https://reddit.com/r/productivity/comments/developer_efficiency"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_005",
+        "reasoning": "Developer productivity tool with freemium model potential and enterprise upsell",
+        "generatedAt": "2025-09-22T20:30:00.000Z"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Remote Team Pulse",
+      "elevator_pitch": "Anonymous team mood and engagement tracking tool that helps managers identify burnout and communication issues before they escalate.",
+      "target_audience": "Remote team managers, HR professionals, and startup founders managing distributed teams",
+      "pain_point_solved": "Difficulty detecting team morale and engagement issues in remote work environments until it's too late",
+      "solution_approach": "Daily micro-surveys with sentiment analysis and early warning system for team health metrics",
+      "overall_score": 85,
+      "pain_severity_score": 87,
+      "market_size_score": 90,
+      "competition_score": 78,
+      "implementation_difficulty": 60,
+      "category": "Business",
+      "tags": ["remote-work", "team-management", "hr", "analytics"],
+      "created_at": "2025-09-22T19:15:00.000Z",
+      "source_subreddits": ["entrepreneur", "smallbusiness"],
+      "source_urls": [
+        "https://reddit.com/r/entrepreneur/comments/remote_team_challenges",
+        "https://reddit.com/r/smallbusiness/comments/employee_engagement"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_005",
+        "reasoning": "Critical need in remote-first world with clear B2B value proposition and recurring revenue model",
+        "generatedAt": "2025-09-22T19:15:00.000Z"
+      }
+    },
+    {
+      "id": "11",
+      "name": "Expense Splitter Pro",
+      "elevator_pitch": "Smart expense splitting app that automatically categorizes shared expenses and handles complex splitting scenarios for groups and roommates.",
+      "target_audience": "Roommates, friend groups, couples, and small teams who regularly share expenses",
+      "pain_point_solved": "Tedious manual tracking and awkward conversations about shared expenses leading to relationship strain",
+      "solution_approach": "Receipt scanning with AI categorization, flexible splitting rules, and automated payment reminders",
+      "overall_score": 74,
+      "pain_severity_score": 76,
+      "market_size_score": 85,
+      "competition_score": 55,
+      "implementation_difficulty": 50,
+      "category": "Lifestyle",
+      "tags": ["finance", "expense-tracking", "social", "mobile-app"],
+      "created_at": "2025-09-22T18:00:00.000Z",
+      "source_subreddits": ["personalfinance", "productivity"],
+      "source_urls": [
+        "https://reddit.com/r/personalfinance/comments/roommate_expenses",
+        "https://reddit.com/r/productivity/comments/expense_tracking_tools"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_006",
+        "reasoning": "Common social problem with viral growth potential and clear monetization through premium features",
+        "generatedAt": "2025-09-22T18:00:00.000Z"
+      }
+    },
+    {
+      "id": "12",
+      "name": "Learning Path Builder",
+      "elevator_pitch": "AI-powered platform that creates personalized learning roadmaps by analyzing your goals, current skills, and learning style preferences.",
+      "target_audience": "Career changers, students, and professionals looking to upskill in specific domains",
+      "pain_point_solved": "Overwhelming amount of learning resources making it hard to create structured, efficient learning paths",
+      "solution_approach": "Skill gap analysis with curated resource recommendations and progress tracking with adaptive scheduling",
+      "overall_score": 80,
+      "pain_severity_score": 78,
+      "market_size_score": 92,
+      "competition_score": 70,
+      "implementation_difficulty": 72,
+      "category": "Technology",
+      "tags": ["education", "ai", "career-development", "personalization"],
+      "created_at": "2025-09-22T16:45:00.000Z",
+      "source_subreddits": ["entrepreneur", "productivity"],
+      "source_urls": [
+        "https://reddit.com/r/entrepreneur/comments/skill_development_overwhelm",
+        "https://reddit.com/r/productivity/comments/learning_efficiently"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_006",
+        "reasoning": "Growing market for personalized education with B2C and B2B potential",
+        "generatedAt": "2025-09-22T16:45:00.000Z"
+      }
+    },
+    {
+      "id": "13",
+      "name": "Startup Idea Validator",
+      "elevator_pitch": "Platform that helps validate startup ideas through automated market research, competitor analysis, and target audience surveys.",
+      "target_audience": "Aspiring entrepreneurs, early-stage founders, and innovation teams in corporations",
+      "pain_point_solved": "Founders building products without proper market validation, leading to failed startups and wasted resources",
+      "solution_approach": "Automated research tools combined with survey distribution and data analysis to provide validation scores and recommendations",
+      "overall_score": 83,
+      "pain_severity_score": 88,
+      "market_size_score": 75,
+      "competition_score": 80,
+      "implementation_difficulty": 68,
+      "category": "Business",
+      "tags": ["validation", "market-research", "startups", "analytics"],
+      "created_at": "2025-09-22T15:30:00.000Z",
+      "source_subreddits": ["startups", "entrepreneur"],
+      "source_urls": [
+        "https://reddit.com/r/startups/comments/idea_validation_struggle",
+        "https://reddit.com/r/entrepreneur/comments/market_research_tools"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_007",
+        "reasoning": "Meta-solution for startup success with high-value B2B pricing potential",
+        "generatedAt": "2025-09-22T15:30:00.000Z"
+      }
+    },
+    {
+      "id": "14",
+      "name": "Habit Stack Builder",
+      "elevator_pitch": "Habit tracking app that helps you build sustainable routines by connecting new habits to existing ones using behavior stacking principles.",
+      "target_audience": "Productivity enthusiasts, people trying to build better habits, and anyone struggling with consistency",
+      "pain_point_solved": "People failing to stick to new habits because they try to change too much at once without proper anchoring",
+      "solution_approach": "Guided habit stacking with existing routine analysis and gradual complexity increase with behavioral psychology principles",
+      "overall_score": 71,
+      "pain_severity_score": 72,
+      "market_size_score": 82,
+      "competition_score": 58,
+      "implementation_difficulty": 45,
+      "category": "Lifestyle",
+      "tags": ["habits", "psychology", "productivity", "wellness"],
+      "created_at": "2025-09-22T14:10:00.000Z",
+      "source_subreddits": ["productivity", "entrepreneur"],
+      "source_urls": [
+        "https://reddit.com/r/productivity/comments/habit_formation_fails",
+        "https://reddit.com/r/entrepreneur/comments/building_discipline"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_007",
+        "reasoning": "Psychology-based approach to common problem with subscription model potential",
+        "generatedAt": "2025-09-22T14:10:00.000Z"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Freelance Invoice Tracker",
+      "elevator_pitch": "Automated invoice tracking system that monitors payment status, sends smart follow-ups, and predicts cash flow for freelancers.",
+      "target_audience": "Freelancers, consultants, and small service providers struggling with invoice management and cash flow",
+      "pain_point_solved": "Freelancers losing money due to forgotten follow-ups and poor cash flow visibility",
+      "solution_approach": "Automated invoice tracking with intelligent follow-up sequences and cash flow forecasting based on payment patterns",
+      "overall_score": 86,
+      "pain_severity_score": 90,
+      "market_size_score": 80,
+      "competition_score": 85,
+      "implementation_difficulty": 58,
+      "category": "Business",
+      "tags": ["invoicing", "cash-flow", "freelance", "automation"],
+      "created_at": "2025-09-22T13:25:00.000Z",
+      "source_subreddits": ["freelance", "smallbusiness"],
+      "source_urls": [
+        "https://reddit.com/r/freelance/comments/invoice_payment_delays",
+        "https://reddit.com/r/smallbusiness/comments/cash_flow_management"
+      ],
+      "generated_by": "openai-gpt",
+      "processing_metadata": {
+        "batchId": "batch_008",
+        "reasoning": "Direct revenue impact for target users with clear ROI and subscription model fit",
+        "generatedAt": "2025-09-22T13:25:00.000Z"
+      }
+    }
+  ],
+  "metadata": {
+    "total": 15,
+    "categories": {
+      "Business": 8,
+      "Technology": 4,
+      "Lifestyle": 3
+    },
+    "score_distribution": {
+      "80-100": 7,
+      "70-79": 5,
+      "60-69": 3
+    },
+    "generated_dates": {
+      "last_24h": 10,
+      "last_48h": 5
+    }
+  }
+}

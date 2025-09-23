@@ -25,6 +25,15 @@ export const config = {
   openai: {
     apiKey: process.env.OPENAI_API_KEY!,
   },
+
+  // Development Configuration
+  development: {
+    useMockData:
+      process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true' ||
+      (process.env.NEXT_PUBLIC_USE_MOCK_DATA !== 'false' &&
+        process.env.NODE_ENV === 'development'),
+    mockApiDelay: parseInt(process.env.NEXT_PUBLIC_MOCK_API_DELAY || '500'),
+  },
 } as const;
 
 /**

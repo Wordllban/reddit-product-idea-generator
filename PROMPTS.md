@@ -247,21 +247,25 @@ Lets move prompt templates into separate files to make code easier to read
 
 ## 📊 Interaction Statistics
 
-| Category              | Count | Success Rate | Notes                                    |
-| --------------------- | ----- | ------------ | ---------------------------------------- |
-| Setup & Config        | 5     | 100%         | Project setup, dependencies              |
-| Database Design       | 1     | 100%         | Enhanced schema planning                 |
-| API Integration       | 2     | 100%         | Reddit API client & testing              |
-| UI Development        | 16    | 100%         | Landing page + test UI + success stories |
-| Migration             | 2     | 100%         | Tailwind v4 migration                    |
-| LLM Integration       | 8     | 100%         | OpenAI client & content pipeline         |
-| Requirements Analysis | 3     | 100%         | MVP compliance validation                |
-| Code Refactoring      | 5     | 100%         | Prompt templates & organization          |
-| Debugging             | 6     | 100%         | Linting and type fixes                   |
-| Documentation         | 9     | 100%         | PROMPTS.md & README updates              |
-| Code Cleanup          | 1     | 100%         | Unused file removal & technical debt     |
+| Category                 | Count | Success Rate | Notes                                    |
+| ------------------------ | ----- | ------------ | ---------------------------------------- |
+| Setup & Config           | 5     | 100%         | Project setup, dependencies              |
+| Database Design          | 1     | 100%         | Enhanced schema planning                 |
+| API Integration          | 2     | 100%         | Reddit API client & testing              |
+| UI Development           | 16    | 100%         | Landing page + test UI + success stories |
+| Migration                | 2     | 100%         | Tailwind v4 migration                    |
+| LLM Integration          | 8     | 100%         | OpenAI client & content pipeline         |
+| Requirements Analysis    | 3     | 100%         | MVP compliance validation                |
+| Code Refactoring         | 5     | 100%         | Prompt templates & organization          |
+| Debugging                | 6     | 100%         | Linting and type fixes                   |
+| Documentation            | 12    | 100%         | PROMPTS.md & README updates              |
+| Code Cleanup             | 1     | 100%         | Unused file removal & technical debt     |
+| Mock Data System         | 8     | 100%         | Complete mock data implementation        |
+| Code Formatting          | 4     | 100%         | Style improvements & consistency         |
+| TanStack Query Migration | 6     | 100%         | State management modernization           |
+| Infinite Loading Debug   | 5     | 100%         | Systematic troubleshooting & root cause  |
 
-_Updated after Codebase Cleanup Session - September 23, 2025_
+_Updated after TanStack Query Migration & Debugging Session - September 23, 2025_
 
 ---
 
@@ -615,6 +619,202 @@ Analyze repo for unused files and remove them.
   - **Developer Experience**: Cleaner codebase structure
 - **Next Steps**: Consider additional cleanup opportunities (unused dependencies, dead API routes)
 
+### Session 8 - Mock Data System Implementation (September 23, 2025)
+
+- **Time**: 2-3 hours
+- **Focus**: Complete mock data system for testing Ideas Page without database
+- **Key Interactions**:
+  - Database schema analysis from existing API routes and processing pipeline
+  - Comprehensive mock data creation with 15 realistic product ideas
+  - Mock API service implementation with full filtering, sorting, and search
+  - API abstraction hook for seamless switching between mock and real API
+  - Component integration and configuration system setup
+- **User Request**:
+
+```
+Database is not ready yet, so lets create a mock data to test your code before we move forward. Create a separate folder called mocks where you can add testing data (json). Analyze the currect schema we expect from database, create a mock data that shape.
+```
+
+- **Files Created**:
+  - `mocks/product-ideas.json` - 15 realistic product ideas with complete data structure
+  - `mocks/mock-data-service.ts` - Complete mock API service with filtering, sorting, and generation
+  - `mocks/README.md` - Comprehensive documentation for mock data usage
+  - `mocks/USAGE.md` - Detailed usage guide and testing scenarios
+  - `hooks/use-ideas-api.ts` - Unified API hook for mock/real API switching
+- **Files Modified**:
+  - `lib/config.ts` - Added development configuration for mock data control
+  - `components/ideas-feed.tsx` - Updated to use new API hook with mock data support
+- **Technical Achievements**:
+  - **Complete Schema Analysis**: Mapped database format (snake_case) to API format (camelCase)
+  - **Realistic Mock Data**: 15 product ideas across Business (8), Technology (4), Lifestyle (3) categories
+  - **Full API Simulation**: Filtering, sorting, search, pagination, and idea generation
+  - **Environment Control**: `NEXT_PUBLIC_USE_MOCK_DATA` flag for development/production switching
+  - **Visual Indicators**: "Mock Data" badge and console logging for development clarity
+  - **Type Safety**: Complete TypeScript interfaces throughout mock system
+- **Mock Data Features**:
+  - **Filtering**: Category, score-based, and search across all fields
+  - **Sorting**: Newest first, highest scored, by category
+  - **Pagination**: 12 items per page with navigation
+  - **Generation**: Simulates 3-5 new ideas with realistic processing time
+  - **Statistics**: Category distribution, score ranges, and "new" idea tracking
+  - **Realistic Delays**: API delays for testing loading states
+- **Data Quality**:
+  - **Score Distribution**: 80-100 (7), 70-79 (5), 60-69 (3) for balanced testing
+  - **Source Attribution**: Linked to 8 different Reddit communities
+  - **Temporal Variety**: Mix of new and older ideas for "New" badge testing
+  - **Authentic Content**: All ideas based on real market problems and pain points
+- **Development Workflow**:
+  - **Default Mock Mode**: Automatically uses mock data in development
+  - **Easy Switching**: Environment variable control for real API testing
+  - **Build Success**: Application builds successfully with all features
+  - **Complete Testing**: All MVP features testable without external dependencies
+- **Next Steps**: Database integration and real API testing when ready
+
+### Session 9 - Code Formatting & Style Improvements (September 23, 2025)
+
+- **Time**: 15 minutes
+- **Focus**: Code formatting consistency and style improvements
+- **Key Interactions**:
+  - Applied consistent Prettier formatting across mock data files
+  - Improved code readability with proper line breaks and indentation
+  - Cleaned up import statements and removed unused code comments
+  - Standardized arrow function formatting and object destructuring
+- **User Request**:
+
+```
+Lets note those changes in @PROMPTS.md
+```
+
+- **Files Modified with Formatting Improvements**:
+  - `mocks/mock-data-service.ts`:
+    - Added trailing commas for consistency
+    - Improved multi-line string formatting
+    - Standardized arrow function parameter formatting
+    - Enhanced readability of array operations and filtering logic
+  - `mocks/README.md`:
+    - Improved markdown formatting and spacing
+    - Added proper section headers and consistent bullet points
+    - Enhanced code block formatting and indentation
+  - `hooks/use-ideas-api.ts`:
+    - Standardized callback function formatting
+    - Improved multi-line parameter destructuring
+    - Enhanced error message formatting consistency
+    - Added proper spacing and line breaks for readability
+  - `components/ideas-feed.tsx`:
+    - Removed unused import comments
+    - Improved object destructuring formatting
+    - Fixed indentation inconsistencies
+    - Changed semantic HTML from `<main>` to `<div>` with proper role attribute
+- **Code Quality Improvements**:
+  - **Consistency**: Applied uniform formatting standards across all files
+  - **Readability**: Improved code structure with proper spacing and indentation
+  - **Maintainability**: Standardized patterns for easier future modifications
+  - **TypeScript**: Maintained type safety while improving formatting
+- **Formatting Standards Applied**:
+  - Trailing commas in objects and arrays
+  - Consistent multi-line parameter formatting
+  - Proper spacing around operators and brackets
+  - Standardized arrow function syntax
+  - Improved string interpolation formatting
+- **Impact**:
+  - **Developer Experience**: More readable and maintainable code
+  - **Code Reviews**: Easier to review changes with consistent formatting
+  - **Build Status**: All formatting changes maintain successful build
+  - **Functionality**: No functional changes, only style improvements
+- **Next Steps**: Continue maintaining consistent formatting standards in future development
+
+### Session 10 - TanStack Query Migration & Infinite Loading Debug (September 23, 2025)
+
+- **Time**: 1-2 hours
+- **Focus**: Migrate from manual state management to TanStack Query and resolve infinite loading issue
+- **Key Interactions**:
+  - TanStack Query library installation and setup
+  - Complete refactoring from manual state management to query-based architecture
+  - Debugging infinite loading issue through systematic troubleshooting
+  - Root cause identification: configuration logic error preventing mock data usage
+- **User Requests**:
+
+```
+@use-ideas-api.ts seems to be hard to maintain in a long term, lets use tanstack query library which removes boilerplate such as handling of loading state
+```
+
+```
+Something went wrong and now we have an infinite loading
+```
+
+```
+The infitire loop gone with use of simplified version of hook. Now lets keep adding the functionality it had before step by step, so we can track what actually causing the issue
+```
+
+```
+Infinite loop was presented because we were trying to call the API thats not ready yet, instead of the mocked data. Lets wrap up what we implemented in @PROMPTS.md
+```
+
+- **Files Created**:
+  - `components/providers/query-provider.tsx` - TanStack Query provider with optimized configuration
+  - `lib/api/ideas-api.ts` - Pure API functions for TanStack Query consumption
+  - `hooks/use-ideas-query.ts` - New TanStack Query-based hooks with caching and mutations
+  - `hooks/use-ideas-simple.ts` - Simplified debugging hook (temporary, later deleted)
+- **Files Modified**:
+  - `app/layout.tsx` - Integrated QueryProvider into root layout
+  - `lib/config.ts` - Fixed configuration logic for mock data usage
+  - `components/ideas-feed.tsx` - Refactored to use TanStack Query hooks
+- **Files Deleted**:
+  - `hooks/use-ideas-api.ts` - Replaced with TanStack Query implementation
+- **Technical Achievements**:
+  - **Reduced Boilerplate**: Eliminated 200+ lines of manual state management code
+  - **Modern Architecture**: Industry-standard server state management with TanStack Query
+  - **Intelligent Caching**: 5-minute stale time, 10-minute garbage collection, exponential backoff
+  - **Optimistic Updates**: Immediate UI feedback with automatic cache invalidation
+  - **Developer Tools**: React Query DevTools integration for debugging
+  - **Type Safety**: Complete TypeScript integration throughout
+- **Root Cause Discovery**:
+  - **Initial Symptom**: Infinite loading on Ideas Page after TanStack Query migration
+  - **Debugging Process**: Created simplified hook to isolate the issue
+  - **Root Cause**: Configuration logic error - used `&&` instead of `||` for mock data detection
+  - **Problem**: `useMockData: NEXT_PUBLIC_USE_MOCK_DATA === 'true' && NODE_ENV === 'development'` always evaluated to false
+  - **Solution**: Changed to `useMockData: NEXT_PUBLIC_USE_MOCK_DATA === 'true' || NODE_ENV === 'development'`
+  - **Result**: App was trying to call real API (database) instead of mock data service
+- **Migration Benefits**:
+  - **Automatic State Management**: No more manual `useState` for loading/error states
+  - **Built-in Caching**: Data persists between component mounts and page navigations
+  - **Background Refetching**: Data stays fresh with automatic updates
+  - **Request Deduplication**: Multiple components share same queries efficiently
+  - **Better Error Handling**: Standardized error states with retry logic
+  - **Performance Optimization**: Reduced API calls through intelligent caching
+- **TanStack Query Features Implemented**:
+  - **Query Configuration**: Optimized defaults for ideas data lifecycle
+  - **Query Keys**: Hierarchical structure for efficient cache management
+  - **Mutations**: Generate ideas with optimistic updates and cache invalidation
+  - **Multiple Queries**: Ideas, categories, and statistics with different cache strategies
+  - **DevTools Integration**: Visual debugging and cache inspection in development
+- **Debugging Methodology**:
+  - **Step-by-step Approach**: Used simplified hook to isolate complex logic
+  - **Console Logging**: Added comprehensive debugging throughout API calls
+  - **Configuration Verification**: Checked environment variable evaluation
+  - **Terminal Analysis**: Monitored server logs to identify API vs mock data usage
+- **Configuration Fix Details**:
+  - **Before**: Mock data never used because of incorrect AND logic
+  - **After**: Mock data used in development OR when explicitly enabled
+  - **Impact**: Resolved infinite loading by ensuring mock data service is used
+  - **Verification**: Console logs confirmed mock data service activation
+- **Architecture Improvements**:
+  - **Separation of Concerns**: Pure API functions separate from UI logic
+  - **Hook Composition**: Specialized hooks for different data operations
+  - **Cache Strategy**: Different cache durations for different data types
+  - **Error Boundaries**: Better error handling with user-friendly messages
+- **Additional Fixes - Multiple Infinite Loop Issues**:
+  - **Issue 1 - useEffect Infinite Loop**: `Maximum update depth exceeded` error from useEffect with array dependency
+    - **Root Cause**: `filteredAndSortedIdeas` array recreated on every render causing infinite useEffect calls
+    - **Solution**: Changed dependency from `[filteredAndSortedIdeas]` to `[filteredAndSortedIdeas.length, filters.category, filters.minScore, filters.searchQuery, filters.sortBy]`
+    - **Result**: Eliminated infinite re-renders while maintaining proper pagination updates
+  - **Issue 2 - Environment Variable Configuration**: `process.env.NEXT_PUBLIC_USE_MOCK_DATA` was `undefined`
+    - **Root Cause**: Configuration only checked for explicit `'true'` value, not handling undefined case
+    - **Discovery**: Console logging revealed `NEXT_PUBLIC_USE_MOCK_DATA: undefined, NODE_ENV: 'development'`
+    - **Solution**: Updated logic to `NEXT_PUBLIC_USE_MOCK_DATA === 'true' || (NEXT_PUBLIC_USE_MOCK_DATA !== 'false' && NODE_ENV === 'development')`
+    - **Result**: Mock data now properly used by default in development environment
+- **Next Steps**: Database setup and real API integration when ready
+
 ---
 
 ## 🚀 Future Prompt Templates
@@ -748,6 +948,63 @@ Perform comprehensive codebase analysis for:
 - Broken import paths
 - Legacy code patterns
 - Documentation inconsistencies
+```
+
+### Template: State Management Migration
+
+```
+@[HOOK_FILE] seems to be hard to maintain in a long term, lets use [LIBRARY] library which removes boilerplate such as handling of [SPECIFIC_CONCERNS]
+```
+
+**Follow-up for debugging infinite loops:**
+
+```
+Something went wrong and now we have an infinite loading
+```
+
+**Follow-up for systematic debugging:**
+
+```
+The infinite loop gone with use of simplified version of hook. Now lets keep adding the functionality it had before step by step, so we can track what actually causing the issue
+```
+
+### Template: Debugging Configuration Issues
+
+```
+Infinite loop was presented because we were trying to call the API thats not ready yet, instead of the mocked data. Lets wrap up what we implemented in @PROMPTS.md
+```
+
+**Debugging methodology for infinite loading:**
+
+1. **Create simplified version** of problematic component/hook
+2. **Add comprehensive logging** to identify data flow
+3. **Check configuration logic** for environment variables
+4. **Monitor server logs** to verify API vs mock usage
+5. **Step-by-step feature addition** to isolate root cause
+6. **Check useEffect dependencies** for array references causing re-renders
+7. **Document findings** for future reference
+
+**Common infinite loop causes:**
+
+- Array/object dependencies in useEffect (use `.length` or specific properties)
+- Configuration logic errors (AND vs OR in environment checks)
+- Environment variables being `undefined` instead of expected string values
+- Unstable query keys in TanStack Query
+- Missing memoization for complex objects passed as props
+
+**Environment variable debugging:**
+
+```typescript
+// Add logging to check actual values
+console.log('Env vars:', {
+  NEXT_PUBLIC_USE_MOCK_DATA: process.env.NEXT_PUBLIC_USE_MOCK_DATA, // Often undefined!
+  NODE_ENV: process.env.NODE_ENV,
+});
+
+// Safe configuration pattern
+useMockData: process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true' ||
+  (process.env.NEXT_PUBLIC_USE_MOCK_DATA !== 'false' &&
+    process.env.NODE_ENV === 'development');
 ```
 
 ---

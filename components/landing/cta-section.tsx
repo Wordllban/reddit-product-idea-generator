@@ -119,7 +119,7 @@ export function CTASection() {
                 className="px-8 py-6 text-lg min-w-[200px]"
                 asChild
               >
-                <Link href="/protected">View Sample Ideas</Link>
+                <Link href="/ideas">View Sample Ideas</Link>
               </Button>
             </div>
 

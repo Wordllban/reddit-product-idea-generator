@@ -16,13 +16,13 @@ export interface PromptVariables {
   [key: string]: string | number | string[] | undefined;
 }
 
-export interface SystemPromptVariables {
+export interface SystemPromptVariables extends PromptVariables {
   minScore: number;
   creativityLevel: string;
   creativityGuidance: string;
 }
 
-export interface IdeaGenerationPromptVariables {
+export interface IdeaGenerationPromptVariables extends PromptVariables {
   contextSection: string;
   problemsSection: string;
   maxIdeas: number;

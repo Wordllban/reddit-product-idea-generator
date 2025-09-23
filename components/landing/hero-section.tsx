@@ -63,7 +63,7 @@ export function HeroSection() {
             className="px-8 py-6 text-lg"
             asChild
           >
-            <Link href="/protected">View Sample Ideas</Link>
+            <Link href="/ideas">View Sample Ideas</Link>
           </Button>
         </div>
 

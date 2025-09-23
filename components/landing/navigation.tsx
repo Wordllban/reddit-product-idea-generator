@@ -11,7 +11,7 @@ const navItems = [
   { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How It Works' },
   { href: '#testimonials', label: 'Success Stories' },
-  { href: '/protected', label: 'Sample Ideas' },
+  { href: '/ideas', label: 'Sample Ideas' },
 ];
 
 export function Navigation() {

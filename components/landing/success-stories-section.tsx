@@ -133,7 +133,9 @@ export function SuccessStoriesSection() {
                   <p className="text-xs font-medium text-muted-foreground mb-1">
                     Original Problem from {story.subreddit}:
                   </p>
-                  <p className="text-sm italic">"{story.originalProblem}"</p>
+                  <p className="text-sm italic">
+                    &quot;{story.originalProblem}&quot;
+                  </p>
                 </div>
 
                 {/* Metrics */}
