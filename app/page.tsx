@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/landing/navigation';
 import { HeroSection } from '@/components/landing/hero-section';
+import { SuccessStoriesSection } from '@/components/landing/success-stories-section';
 import { FeaturesSection } from '@/components/landing/features-section';
 import { HowItWorksSection } from '@/components/landing/how-it-works-section';
 import { SocialProofSection } from '@/components/landing/social-proof-section';
@@ -49,6 +50,9 @@ export default function Home() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <HeroSection />
+
+        {/* Success Stories Section */}
+        <SuccessStoriesSection />
 
         {/* Features Section */}
         <section id="features">

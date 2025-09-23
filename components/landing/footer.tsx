@@ -9,7 +9,7 @@ const footerSections = [
     links: [
       { href: '#features', label: 'Features' },
       { href: '#how-it-works', label: 'How It Works' },
-      { href: '/protected', label: 'Sample Ideas' },
+      { href: '/ideas', label: 'Sample Ideas' },
       { href: '/pricing', label: 'Pricing' },
     ],
   },
@@ -49,7 +49,7 @@ const socialLinks = [
     label: 'Follow us on Twitter',
   },
   {
-    href: 'https://github.com/reddit-idea-generator',
+    href: 'https://github.com/Wordllban/reddit-product-idea-generator',
     icon: Github,
     label: 'Star us on GitHub',
   },
@@ -116,7 +116,7 @@ export function Footer() {
                   const Icon = social.icon;
                   return (
                     <Button
-                      key={social.href}
+                      key={social.label + social.href}
                       variant="ghost"
                       size="sm"
                       asChild
@@ -164,7 +164,7 @@ export function Footer() {
         {/* Bottom section */}
         <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>© 2024 Reddit Idea Generator. All rights reserved.</span>
+            <span>© 2025 Reddit Idea Generator. All rights reserved.</span>
           </div>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
