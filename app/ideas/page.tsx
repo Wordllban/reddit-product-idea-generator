@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
-import { IdeaGeneratorClient } from '@/components/idea-generator-client';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 export default async function IdeasPage() {
   const supabase = await createClient();
@@ -20,7 +21,18 @@ export default async function IdeasPage() {
         </p>
       </div>
 
-      <IdeaGeneratorClient />
+      <Card>
+        <CardHeader>
+          <CardTitle>Generate Ideas</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground mb-4">
+            Click the button below to start analyzing Reddit discussions and
+            generate product ideas.
+          </p>
+          <Button>Generate Product Ideas</Button>
+        </CardContent>
+      </Card>
     </div>
   );
 }
