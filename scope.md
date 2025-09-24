@@ -23,13 +23,13 @@ Build a minimal viable SaaS that helps beginner founders generate product ideas 
 - [x] Create `.cursor/` folder
 - [x] Write `rules.md` (architecture, style, commit conventions)
 - [x] Initialize `PROMPTS.md` for tracking AI interactions
-- [ ] Document AI workflow approach
+- [x] Document AI workflow approach
 
 ### 1.3 Database & Authentication Foundation
 
 - [x] Setup Supabase project
-- [ ] Configure authentication providers
-- [ ] Design database schema:
+- [x] Configure authentication providers
+- [x] Design database schema:
   - `users` table (auth integration)
   - `ideas` table (generated product ideas)
   - `subreddits` table (tracked subreddits with categories)
