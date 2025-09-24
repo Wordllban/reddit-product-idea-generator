@@ -27,7 +27,7 @@ Add these environment variables to your `.env.local` file:
 # Reddit API Configuration
 REDDIT_CLIENT_ID=your-client-id-here
 REDDIT_CLIENT_SECRET=your-client-secret-here
-REDDIT_USER_AGENT=reddit-product-idea-generator:v1.0.0 (by /u/yourusername)
+REDDIT_USER_AGENT=reddit-product-idea-generator:v1.0.0 (by /u/yourusername, optional)
 ```
 
 **Important Notes:**
