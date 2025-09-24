@@ -37,8 +37,27 @@ export interface IdeaGenerationPromptVariables extends PromptVariables {
 // ============================================================================
 
 export class PromptLoader {
-  private readonly TEMPLATES_DIR = path.join(__dirname, 'templates');
+  private readonly TEMPLATES_DIR = this.getTemplatesDirectory();
   private templateCache = new Map<string, string>();
+
+  /**
+   * Get the correct templates directory path
+   */
+  private getTemplatesDirectory(): string {
+    // Try process.cwd() first (works in development and most production scenarios)
+    const cwdPath = path.join(process.cwd(), 'lib', 'prompts', 'templates');
+
+    // Fallback to __dirname (works in compiled/bundled scenarios)
+    const dirnamePath = path.join(__dirname, 'templates');
+
+    // Check if files exist using synchronous check for constructor
+    try {
+      fs.accessSync(cwdPath, fs.constants.F_OK);
+      return cwdPath;
+    } catch {
+      return dirnamePath;
+    }
+  }
 
   /**
    * Load and render system prompt template

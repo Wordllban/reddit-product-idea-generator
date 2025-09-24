@@ -114,8 +114,7 @@ export class OpenAIClient {
             content: userPrompt,
           },
         ],
-        temperature: this.getTemperature(config.creativityLevel),
-        max_tokens: 4000,
+        max_completion_tokens: 4000,
         response_format: { type: 'json_object' },
       });
 
@@ -166,20 +165,6 @@ export class OpenAIClient {
         config.creativityLevel,
       ),
     });
-  }
-
-  /**
-   * Get temperature setting based on creativity level
-   */
-  private getTemperature(level: GenerationConfig['creativityLevel']): number {
-    switch (level) {
-      case 'conservative':
-        return 0.3;
-      case 'creative':
-        return 0.8;
-      default:
-        return 0.6;
-    }
   }
 
   /**
@@ -424,7 +409,7 @@ export class OpenAIClient {
       const response = await this.client.chat.completions.create({
         model: 'gpt-5-nano',
         messages: [{ role: 'user', content: 'Hello' }],
-        max_tokens: 10,
+        max_completion_tokens: 10,
       });
 
       return !!response.choices[0]?.message?.content;
